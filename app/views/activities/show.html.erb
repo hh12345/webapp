@@ -1,0 +1,16 @@
+
+    <div class="span8">
+        <% if @user.activities.any? %>
+            <h3>已发布活动 (<%= @user.activities.count %>)</h3>
+            <ol class="activities">
+                
+                <%= render @activities %>
+                
+                
+                
+            </ol>
+            <%= will_paginate @activities %>
+        <% end %>
+    </div>
+    
+    

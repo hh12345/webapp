@@ -1,0 +1,35 @@
+<h3>已参加活动(<%=@participations.count %>)</h3>
+<% @participations.each do |participation| %>
+<% @activity=Activity.find_by_id(participation.activity_id)%>
+
+<p>
+  <strong>title:</strong>
+  <%= @activity.title %>
+</p>
+<p>
+  <strong>style:</strong>
+  <%= @activity.style %>
+</p>
+<p>
+  <strong>limitednumber:</strong>
+   <%= @activity.limitednumber %>
+</p>
+<p>
+  <strong>starttime:</strong>
+  <%= @activity.starttime %>
+</p>
+<p>
+  <strong>deadline:</strong>
+  <%= @activity.deadline %>
+</p>
+
+<strong>introduction:</strong>   
+<span class="content"><%= @activity.introduction %></span>
+<span class="timestamp">
+    Posted <%= time_ago_in_words(@activity.created_at) %> ago.
+</span><br>
+<%=link_to "删除",activity_participation_path(@activity,participation),:method=>"delete",:class=>"btn"%> 
+<%=link_to "评论",'#',:class=>"btn" %>
+<%=link_to "查看同伴",options={:controller=>"participations",:action=>"partner",:id=>@activity.id},:class=>"btn"%>
+
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  style: MyString
+  introduction: MyText
+  starttime: 2015-12-27 05:30:39
+  deadline: 2015-12-27 05:30:39
+  limitednumber: 1
+  user_id: 1
+
+two:
+  title: MyString
+  style: MyString
+  introduction: MyText
+  starttime: 2015-12-27 05:30:39
+  deadline: 2015-12-27 05:30:39
+  limitednumber: 1
+  user_id: 1

@@ -1,0 +1,64 @@
+<p>
+  <strong>title:</strong>
+  <%= @activity.title %>
+</p>
+<p>
+  <strong>style:</strong>
+  <%= @activity.style %>
+</p>
+<p>
+  <strong>limitednumber:</strong>
+   <%= @activity.limitednumber %>
+</p>
+<p>
+  <strong>starttime:</strong>
+  <%= @activity.starttime %>
+</p>
+<p>
+  <strong>deadline:</strong>
+  <%= @activity.deadline %>
+</p>
+<p>
+<strong>introduction:</strong>   
+<span class="content"><%= @activity.introduction %></span>
+</p>
+<hr>
+
+<table width="800">
+  <tbody>
+    <% @reviews.each do |review| %>
+    <% user=User.find_by_id(review.user_id)%>
+    <tr>
+      <td><%= gravatar_for user %><br><%= user.name %></td>
+      <td><%= review.comments %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<hr>
+
+
+
+<div >
+    <%= form_for [@activity,@review_now] do |r| %>
+    
+        
+        <table width="1000">
+            <tr>
+               <td><%= gravatar_for current_user %><br><%= current_user.name %></td>
+               
+                <td>
+                    <%= r.text_area :comments, placeholder: "Compose new review..." %>
+                    <%= r.submit "提交", class: "btn"  %>
+                </td>
+            </tr>
+        </table>
+    <% end %>
+</div>
+
+       
+
+ 
+
+
+    

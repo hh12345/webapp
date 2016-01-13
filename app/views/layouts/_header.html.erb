@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+    <div class="container">
+    <%= link_to "抱团网", users_path, id: "logo" %>
+    <nav>
+    <ul class="nav pull-right">
+    
+    <% if signed_in? %>
+   
+    <li id="fat-menu" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=current_user.name%><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><%= link_to "查看个人信息", current_user %></li>
+        <li><%= link_to "修改个人信息", edit_user_path(current_user) %></li>
+        <li><%= link_to "已参加活动",  "/participations/show" %></li>
+        <li><%= link_to "已发布活动", activity_path(current_user) %></li>
+        <li><%= link_to "发布活动", activities_new_path(current_user) %></li>
+        
+        
+    </ul>
+    </li>
+    <% else %>
+    <% end %>
+    <li><%= link_to "退出", signout_path, method: "delete" %></li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+</header>

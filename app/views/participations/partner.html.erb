@@ -1,0 +1,26 @@
+<h3>参加活动人数(<%=@participations.count%>)</h3>
+
+<table width="600" align="left">
+     <thead>
+        <tr>
+          <th><strong>Name:</strong></th>
+          <th><strong>Age:</strong></th>
+          <th><strong>Sex:</strong></th>
+          <th><strong>Phonenumber:</strong></th>
+        </tr>
+    </thead>
+    
+    <tbody align="center">
+        <% @participations.each do |participation| %>
+        <% @user=User.find(participation.user_id) %>
+        <tr>
+            <td><%= @user.name %></td>
+            <td><%= @user.age %></td>
+            <td><%= @user.sex %></td>
+            <td><%= @user.phonenumber %></td>
+        </tr>
+        <% end %>
+        
+    </tbody>
+</table>
+

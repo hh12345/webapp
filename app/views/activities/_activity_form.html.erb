@@ -1,0 +1,39 @@
+<div align="center">
+    <%= form_for(@activity) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        
+        
+        <div class="field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title %>
+            
+        </div>
+        
+        <div class="field">
+            <%= f.label :style %><br>
+            <%= f.text_field :style %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :introduction %><br>
+            <%= f.text_area :introduction, placeholder: "Compose new activity..." %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :limitednumber %><br>
+            <%= f.text_field :limitednumber %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :starttime %><br>
+            <%= f.text_field :starttime %>
+        </div>
+        
+        <div class="field">
+            <%= f.label :deadline %><br>
+            <%= f.text_field :deadline %>
+        </div>
+        
+        <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <% end %>
+</div>

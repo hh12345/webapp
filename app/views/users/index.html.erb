@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>欢迎来到抱团网，点击参加活动吧！</h1>
+<div class="navbar">
+  <div class="navbar-inner">
+    <p class="brand">分类</p>
+    <ul class="nav">
+      <li><%= link_to "旅游", '#' %></li>
+      <li><%= link_to "美食", '#' %></li>
+      <li><%= link_to "学习", '#' %></li>
+      <li><%= link_to "游戏", '#' %></li>
+      <li><%= link_to "体育", '#' %></li>
+      <li><%= link_to "购物", '#' %></li>
+    </ul>
+  </div>
+</div>
+<ul class="nav nav-pills">
+  <li><%= link_to "最新", '#' %></li>
+  <li><%= link_to "最热", '#' %></li>
+</ul>
+
+
+<table width="800">
+  <tbody>
+    <% @users.each do |user| %>
+    <% user.activities.each do |activity| %>
+    <tr>
+      <td><%= gravatar_for user %><br><%= user.name %></td>
+      <td><strong>主题:</strong><%= activity.title %><br>
+      <strong>发布时间:</strong><%= activity.created_at %><br><strong>活动开始时间:</strong><%= activity.starttime %> </td>
+      <td><%=link_to "详情",options ={:controller=>"activities",:action=>"detail",:id => activity.id},:class=>"btn" %></a><br>
+      <%=link_to "评论",new_activity_review_path(activity),:class=>"btn"%></td>
+    </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

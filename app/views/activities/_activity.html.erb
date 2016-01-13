@@ -1,0 +1,31 @@
+<p>
+  <strong>title:</strong>
+  <%= activity.title %>
+</p>
+<p>
+  <strong>style:</strong>
+  <%= activity.style %>
+</p>
+<p>
+  <strong>limitednumber:</strong>
+   <%= activity.limitednumber %>
+</p>
+<p>
+  <strong>starttime:</strong>
+  <%= activity.starttime %>
+</p>
+<p>
+  <strong>deadline:</strong>
+  <%= activity.deadline %>
+</p>
+
+<strong>introduction:</strong>   
+<span class="content"><%= activity.introduction %></span>
+<br>
+<h6>
+<%= link_to '编辑',edit_activity_path(activity) %>
+<%= link_to "删除", activity, method: :delete,data: { confirm: "确定删除?" } %>
+<%= link_to '查看同伴', '#' %>
+</h6>
+<HR>
+    
