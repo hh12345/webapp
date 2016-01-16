@@ -29,7 +29,7 @@
     Posted <%= time_ago_in_words(@activity.created_at) %> ago.
 </span><br>
 <%=link_to "删除",activity_participation_path(@activity,participation),:method=>"delete",:class=>"btn"%> 
-<%=link_to "评论",'#',:class=>"btn" %>
+<%=link_to "评论",new_activity_review_path(@activity),:class=>"btn" %>
 <%=link_to "查看同伴",options={:controller=>"participations",:action=>"partner",:id=>@activity.id},:class=>"btn"%>
 
 <% end %>

@@ -43,7 +43,9 @@ class ActivitiesController < ApplicationController
     
 
     def destroy
-       @activity.destroy
+       Activity.find(params[:id]).destroy
+       flash[:success]="删除成功！"
+       redirect_to activity_path(current_user)
         
     end
     

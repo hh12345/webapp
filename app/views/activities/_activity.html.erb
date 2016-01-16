@@ -24,8 +24,8 @@
 <br>
 <h6>
 <%= link_to '编辑',edit_activity_path(activity) %>
-<%= link_to "删除", activity, method: :delete,data: { confirm: "确定删除?" } %>
-<%= link_to '查看同伴', '#' %>
+<%= link_to "删除", activity, method: :delete, data: { confirm: "确定删除?" } %>
+<%= link_to '查看同伴', options={:controller=>"participations",:action=>"partner",:id=>activity.id}%>
 </h6>
 <HR>
     
